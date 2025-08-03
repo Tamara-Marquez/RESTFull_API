@@ -50,6 +50,17 @@ const deleteBooks = (req, res) => {
   }
 };
 
+
+
+
+const availableBooks = (req, res) => {
+  try {
+     res.satuts(200).send ("Obtener todos los libros con existencia disponible para prestamos");
+  } catch (error) {
+    res.satuts(500).send(error);
+  }
+   
+};
 export {
   getAllBooks,
   getBookById,
@@ -57,4 +68,5 @@ export {
   updataBooks,
   updataExistence,
   deleteBooks,
+  availableBooks
 };

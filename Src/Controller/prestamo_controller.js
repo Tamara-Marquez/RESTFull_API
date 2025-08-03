@@ -1,4 +1,5 @@
 import { obtenerPrestamos, ObtenerPrestamosXId } from "../Model/prestamo-model.js";
+import router from "../Routes/libro.router.js";
 
 const getAllLoans = async (req, res) => {
   try {
@@ -42,4 +43,25 @@ const deleteLoans = (req, res) => {
   }
 };
 
-export { getAllLoans, getAllLoansById, updateLoans, deleteLoans, createLoans };
+
+const getLoansUser = (req, res) => {
+  try {
+     res.status(200).send(`Obtener todos los prestamos de un usuarios especifico ${req.params.id}`)
+  } catch (error) {
+    res.status(500).send(error)
+  }
+};
+
+
+const getLoansBooks =(req, res) => {
+  try {
+    res.status(200).send ("Obtener todos los prestamos realizados por un libro")
+  } catch (error) {
+    res.status(500).send(error)
+  }
+};
+
+
+
+
+export { getAllLoans, getAllLoansById, updateLoans, deleteLoans, createLoans,getLoansUser, getLoansBooks };

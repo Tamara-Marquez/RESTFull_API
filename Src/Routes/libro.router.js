@@ -1,5 +1,5 @@
 import { Router } from "express";   
-import { getAllBooks, getBookById, createBooks, updataBooks, deleteBooks, updataExistence } from "../Controller/libro_controller.js";
+import { getAllBooks, getBookById, createBooks, updataBooks, deleteBooks, updataExistence,availableBooks } from "../Controller/libro_controller.js";
 const router= Router ();
 
 router.get('/libros', getAllBooks);
@@ -13,5 +13,7 @@ router.put('/libros/:id', updataBooks);
 router.put('/libros/:id/existencia', updataExistence);
 
 router.delete('/libros/:id', deleteBooks);
+
+router.get('/libros/disponibles', availableBooks);
 
 export default router;
